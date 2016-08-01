@@ -1,0 +1,106 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:Windows
+/config:
+/profile:HiDef
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+/reference:..\..\DeferredPipeline\bin\Debug\DeferredPipeline.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ClearGBuffer.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ClearGBuffer.fx
+
+#begin Models/ship1.fbx
+/importer:FbxImporter
+/processor:DeferredRendererModel
+/processorParam:NormalMapTexture=ship1_n.tga
+/processorParam:NormalMapKey=NormalMap
+/processorParam:SpecularMapTexture=ship1_s.tga
+/processorParam:SpecularMapKey=SpecularMap
+/build:Models/ship1.fbx
+
+#begin DirectionalLight.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:DirectionalLight.fx
+
+#begin CombineFinal.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:CombineFinal.fx
+
+#begin PointLight.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:PointLight.fx
+
+#begin Models/sphere.x
+/importer:XImporter
+/processor:ModelProcessor
+/processorParam:ColorKeyColor=0,0,0,0
+/processorParam:ColorKeyEnabled=True
+/processorParam:DefaultEffect=BasicEffect
+/processorParam:GenerateMipmaps=True
+/processorParam:GenerateTangentFrames=False
+/processorParam:PremultiplyTextureAlpha=True
+/processorParam:PremultiplyVertexColors=True
+/processorParam:ResizeTexturesToPowerOfTwo=False
+/processorParam:RotationX=0
+/processorParam:RotationY=0
+/processorParam:RotationZ=0
+/processorParam:Scale=1
+/processorParam:SwapWindingOrder=False
+/processorParam:TextureFormat=DxtCompressed
+/build:Models/sphere.x
+
+#begin Models/ship2.fbx
+/importer:FbxImporter
+/processor:DeferredRendererModel
+/processorParam:NormalMapTexture=ship2_n.tga
+/processorParam:NormalMapKey=NormalMap
+/processorParam:SpecularMapTexture=ship2_s.tga
+/processorParam:SpecularMapKey=SpecularMap
+/processorParam:RotationX=-90
+/build:Models/ship2.fbx
+
+#begin Models/lizard.fbx
+/importer:FbxImporter
+/processor:DeferredRendererModel
+/build:Models/lizard.fbx
+
+#begin Models/Ground.x
+/importer:XImporter
+/processor:DeferredRendererModel
+/processorParam:NormalMapTexture=ground_normal.jpg
+/processorParam:NormalMapKey=NormalMap
+/processorParam:GenerateTangentFrames=True
+/processorParam:SpecularMapTexture=ground_specular.jpg
+/processorParam:SpecularMapKey=SpecularMap
+/processorParam:ColorKeyColor=0,0,0,0
+/processorParam:ColorKeyEnabled=True
+/processorParam:DefaultEffect=BasicEffect
+/processorParam:GenerateMipmaps=True
+/processorParam:PremultiplyTextureAlpha=True
+/processorParam:PremultiplyVertexColors=True
+/processorParam:ResizeTexturesToPowerOfTwo=False
+/processorParam:RotationX=0
+/processorParam:RotationY=0
+/processorParam:RotationZ=0
+/processorParam:Scale=1
+/processorParam:SwapWindingOrder=False
+/processorParam:TextureFormat=DxtCompressed
+/build:Models/Ground.x
+
